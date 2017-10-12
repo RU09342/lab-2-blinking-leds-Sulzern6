@@ -1,3 +1,12 @@
+# Nathan Sulzer
+# Embedded Systems
+# Lab 2 
+# Simple Blink
+This task consisted of creating a simple code that can blink an LED continuously.
+
+# Basic Code
+The Code functions by blinking an LED on the microprocessor.
+```c
 #include <msp430g2553.h>
 
 #define LED1    BIT0    // Defines LED at P1.0
@@ -18,3 +27,4 @@ int main(void)
             _delay_cycles( 200000);
     }
 }
+```
