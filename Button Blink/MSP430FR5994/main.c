@@ -1,12 +1,3 @@
-# Nathan Sulzer
-# Embedded Systems
-# Lab 2 
-# Button Blink
-This task consisted of creating a simple code that can blink an LED when a BUTTON was pressed and held.
-
-# Basic Code
-The Code functions by using an if statement to check if the BUTTON is pressed and an infinite while statement surrounding it that allows it to constantly be checking for a BUTTON press.
-```c
 #include <msp430fr5994.h>
 
 #define LED1   BIT0     // Defines the LED at P1.0
@@ -35,4 +26,3 @@ int main(void)
 
     }
 }
-```
