@@ -10,22 +10,16 @@
  */
 int main(void)
 {
-    WDTCTL = WDTPW | WDTHOLD;           // stop watchdog timer
-    P1DIR  = LED1;                      // Set P1.0 RED LED to output
-    int i = 0x0001;
-    while(1)
-    {
-        if(i == 1)              // Check for button Press
-        {
-            P1OUT ^= LED1;     // Activate LED 1 RED
-            _delay_cycles( 200000);
-            i == 0x00;
-        }
-        else
-        {
-            P1OUT ^= 0x00;
-            _delay_cycles( 200000);
-            i = i++;
-        }
-    }
+	WDTCTL = WDTPW | WDTHOLD;	 // stop watchdog timer
+	P1DIR  = LED1 + LED2;        // Sets LED at P1.0 and P2.0  as output
+	P1OUT  = LED2;               // Turns on LED2 so the LEDs aren't blinking together
+
+	  while( 1 )
+	  {
+	      P1OUT ^= LED1;            // Blink LED on P1.0
+	      __delay_cycles(200000);   // Delay to see blinking LEDs
+	      P1OUT ^= LED2;            // Blink LED on P1.6
+	      __delay_cycles(100000);   // Delay to see blinking LEDs
+
+	  }
 }
